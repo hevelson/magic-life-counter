@@ -3,6 +3,7 @@ const assets = [
 	"./",
 	"./index.html",
 	"./manifest.json",
+	"./css/app.css",
 	"./css/materialize.min.css",
 	"./js/materialize.min.js",
 	"./js/instalar.js",

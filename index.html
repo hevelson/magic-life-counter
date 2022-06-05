@@ -3,9 +3,9 @@
 
 <head>
 	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/app.css">
 
 	<!--Let browser know website is optimized for mobile-->
@@ -23,126 +23,128 @@
 <body>
 
 	<main>
-		<header>
-			<div class="navbar-fixed ">
-				<nav>
-					<div class="nav-wrapper orange">
-						<a href="#" class="brand-logo truncate">Magic Life Counter</a>
-					</div>
-				</nav>
-			</div>
+		<header class="navbar-top">
+			<h1>
+				Magic Life Counter
+			</h1>
+			<button type="button" class="btn-dots" id="btn-open-menu">
+				Abrir menu
+				<span class="menu-dot"></span>
+				<span class="menu-dot"></span>
+				<span class="menu-dot"></span>
+			</button>
+			<nav>
+				<ul>
+					<li>
+						<button type="button" class="btn-install" id="btn-instalar">
+							Instalar aplicação
+						</button>
+					</li>
+				</ul>
+			</nav>
 		</header>
-		<div class="row">
-			<form class="col s6 form-player-one">
-				<h5 class="col s12">Player 1</h5>
-				<div class="row">
-					<div class="input-field col s12">
-						<input 
-							id="player-one-life" 
-							type="number"
-							class="player-life" 
-							value="20"
-						/>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="plus" data-player="one">
-							<i class="material-icons">exposure_plus_1</i>
-						</button>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="minus" data-player="one">
-							<i class="material-icons">exposure_neg_1</i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<form class="col s6 form-player-two">
-				<h5 class="col s12">Player 2</h5>
-				<div class="row">
-					<div class="input-field col s12">
-						<input 
-							id="player-two-life" 
-							type="number"
-							class="player-life" 
-							value="20"
-						/>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="plus" data-player="two">
-							<i class="material-icons">exposure_plus_1</i>
-						</button>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="minus" data-player="two">
-							<i class="material-icons">exposure_neg_1</i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<form class="col s6 form-player-three">
-				<h5 class="col s12">Player 3</h5>
-				<div class="row">
-					<div class="input-field col s12">
-						<input 
-							id="player-three-life" 
-							type="number"
-							class="player-life" 
-							value="20"
-						/>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="plus" data-player="three">
-							<i class="material-icons">exposure_plus_1</i>
-						</button>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="minus" data-player="three">
-							<i class="material-icons">exposure_neg_1</i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<form class="col s6 form-player-four">
-				<h5 class="col s12">Player 4</h5>
-				<div class="row">
-					<div class="input-field col s12">
-						<input 
-							id="player-four-life" 
-							type="number"
-							class="player-life" 
-							value="20"
-						/>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="plus" data-player="four">
-							<i class="material-icons">exposure_plus_1</i>
-						</button>
-					</div>
-					<div class="button-column col s6">
-						<button type="button" class="update-life btn-floating btn-large waves-effect waves-light white" data-operation="minus" data-player="four">
-							<i class="material-icons">exposure_neg_1</i>
-						</button>
-					</div>
-			</form>
-		</div>
-
-		<footer>
-			<div class="row">
-				<div class="col s12">
-					<h5>Instalar a aplicação</h5>
-					<button class="waves-effect waves-light white green" id="btn-instalar" hidden>
-						<i class="material-icons right">home</i>Instalar
+		<section class="life-displays">
+			<form class="form-player-one">
+				<h2 id="player-name-one">Player 1</h2>
+				<input 
+					id="player-one-life" 
+					type="number"
+					class="player-life" 
+					value="20"
+					readonly
+				/>
+				<div class="actions">
+					<button type="button" class="update-life" data-amount="5" data-operation="plus" data-player="one">
+						+5
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="plus" data-player="one">
+						+1
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="minus" data-player="one">
+						-1
+					</button>
+					<button type="button" class="update-life" data-amount="5" data-operation="minus" data-player="one">
+						-5
 					</button>
 				</div>
-			</div>
-		</footer>
+			</form>
+			<form class="form-player-two">
+				<h2 id="player-name-two">Player 2</h2>
+				<input 
+					id="player-two-life" 
+					type="number"
+					class="player-life" 
+					value="20"
+					readonly
+				/>
+				<div class="actions">
+					<button type="button" class="update-life" data-amount="5" data-operation="plus" data-player="two">
+						+5
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="plus" data-player="two">
+						+1
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="minus" data-player="two">
+						-1
+					</button>
+					<button type="button" class="update-life" data-amount="5" data-operation="minus" data-player="two">
+						-5
+					</button>
+				</div>
+			</form>
+			<form class="form-player-three">
+				<h2 id="player-name-three">Player 3</h2>
+				<input 
+					id="player-three-life" 
+					type="number"
+					class="player-life" 
+					value="20"
+					readonly
+				/>
+				<div class="actions">
+					<button type="button" class="update-life" data-amount="5" data-operation="plus" data-player="three">
+						+5
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="plus" data-player="three">
+						+1
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="minus" data-player="three">
+						-1
+					</button>
+					<button type="button" class="update-life" data-amount="5" data-operation="minus" data-player="three">
+						-5
+					</button>
+				</div>
+			</form>
+			<form class="form-player-four">
+				<h2 id="player-name-four">Player 4</h2>
+				<input 
+					id="player-four-life" 
+					type="number"
+					class="player-life" 
+					value="20"
+					readonly
+				/>
+				<div class="actions">
+					<button type="button" class="update-life" data-amount="5" data-operation="plus" data-player="four">
+						+5
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="plus" data-player="four">
+						+1
+					</button>
+					<button type="button" class="update-life" data-amount="1" data-operation="minus" data-player="four">
+						-1
+					</button>
+					<button type="button" class="update-life" data-amount="5" data-operation="minus" data-player="four">
+						-5
+					</button>
+				</div>
+			</form>
+		</div>
 	</main>
 
-	<!--JavaScript at end of body for optimized loading-->
-	<script src="js/materialize.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/instalar.js"></script>
-
 </body>
 
 </html>

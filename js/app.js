@@ -8,26 +8,21 @@ if ("serviceWorker" in navigator) {
 }
 
 const changePlayerLife = (player, operation, amount) => {
+  amount = parseInt(amount);
   let playerLifeInput = document.getElementById(`player-${player}-life`);
   const life = parseInt(playerLifeInput.value);
-  switch (operation) {
-    case "plus":
-      playerLifeInput.value = life + amount;
-      break;
-    case "minus":
-      playerLifeInput.value = life - amount;
-      break;
-    default:
-      playerLifeInput.value = 20;
-      break;
+  if (operation === "plus") {
+    playerLifeInput.value = life + amount;
+  } else {
+    playerLifeInput.value = life - amount;
   }
 }
 
 const btnPlusLife = document.querySelectorAll('.update-life');
 
 for (const button of btnPlusLife) {
-  button.addEventListener('click', function(event) {
-    const { player, operation } = button.dataset;
-    changePlayerLife(player, operation, 1);
+  button.addEventListener('click', function() {
+    const { player, operation, amount } = button.dataset;
+    changePlayerLife(player, operation, amount);
   });
 }

@@ -1,0 +1,28 @@
+{
+  "name": "magic-life-counter",
+  "version": "1.0.0",
+  "description": "App to manage life points on magic the gathering multiplayer games",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch scss/app.scss css/app.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hevelson/magic-life-counter.git"
+  },
+  "keywords": [
+    "magic",
+    "life",
+    "counter",
+    "pwa"
+  ],
+  "author": "Hevelson Rosario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hevelson/magic-life-counter/issues"
+  },
+  "homepage": "https://github.com/hevelson/magic-life-counter#readme",
+  "dependencies": {
+    "sass": "^1.52.2"
+  }
+}
